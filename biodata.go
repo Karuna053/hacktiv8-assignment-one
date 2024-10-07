@@ -9,13 +9,19 @@ import (
 
 func main() {
 	var programLocation string = os.Args[0]
-	var firstArgument string = "[No First Argument Entered]"
+	var firstArgument string
+
+	if len(os.Args) == 0 {
+		fmt.Println("No arguments entered.")
+		fmt.Println("Press Enter to exit program!")
+		fmt.Scanln() // Wait for input
+	}
 
 	if len(os.Args) > 1 {
 		firstArgument = os.Args[1]
 
 		var person = helpers.Person{}
-		if firstArgument == "Thomas" {
+		if strings.ToLower(firstArgument) == "thomas" {
 			person.ID = 0
 			person.Name = "Thomas"
 			person.Address = "Kota A"
@@ -36,5 +42,4 @@ func main() {
 		fmt.Println("Press Enter to exit program!")
 		fmt.Scanln() // Wait for input
 	}
-
 }
