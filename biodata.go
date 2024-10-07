@@ -31,6 +31,10 @@ func main() {
 		fmt.Println("Address: ", person.Address)
 		fmt.Println("Job: ", person.Job)
 		fmt.Println("Reason: ", person.Reason)
+
+		fmt.Println(strings.Repeat("#", 30))
+		fmt.Println("Press Enter to exit program!")
+		fmt.Scanln() // Wait for input
 	}
 
 }
